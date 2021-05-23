@@ -54,7 +54,7 @@ while True:
     cv2.destroyAllWindows()
 
     # ! score selection
-    if key_value in [ord(str(i)) for i in [0, 1, 2, 3, 4, 5]]: 
+    if key_value in [ord(str(i)) for i in [0, 1, 2, 3, 4, 5]] + [ord('w')]: 
         print("[LABEL] Score: %s (%s)" % (key_value, image_filename))
         with open('labels.txt', 'a', encoding='utf8') as f:
             f.write('%s\t%s\t%s\t%s\t%s\t%s\n' % (image_filename, chr(key_value), id, username, round(time.time() * 1000), image_index))
@@ -73,3 +73,4 @@ while True:
     elif key_value == ord('q'):
         print("Quit")
         break
+
